@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/FGH/AndroidStudioProjects/lolretrofit/app/src/main/res/drawable/ic_lock.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/FGH/AndroidStudioProjects/lolretrofit/app/src/main/res/layout/activity_main.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/MiniProjetAndroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/btn_bg.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_add.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_facebook.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_google.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_logout.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_person1.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/drawable/ic_phone.xml" value="0.1715" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_accountfound.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_changepassword.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_forget_password.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_sign_up.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/activity_verificationcode.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/fragment_question.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/item_add.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/item_email.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/item_info.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/itemquestion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/layout/layoutme.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/Nouveau dossier/miniandroid/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/miniprojetandroid/MiniProjetAndroid/app/src/main/res/layout/activity_changepassword.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/retrofit/lol-Retrofit-main/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
