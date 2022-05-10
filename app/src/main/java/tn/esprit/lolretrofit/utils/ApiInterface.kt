@@ -1,7 +1,9 @@
 package tn.esprit.lolretrofit.utils
 
+import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -50,9 +52,13 @@ interface ApiInterface {
 
     @POST("createquestion")
     fun createquestion(@Body info: RequestBody): Call<Question>
+
+    @Multipart
+    @POST("/updateImageClient/{id}")
+    fun upload(@Part image: MultipartBody.Part,@Path("id") id : String): Call<User>
     companion object {
 
-        var BASE_URL = "http://192.168.1.5:3000/"
+        var BASE_URL = "http://192.168.1.114:3000/"
 
         fun create() : ApiInterface {
             val httpClient = OkHttpClient.Builder()
