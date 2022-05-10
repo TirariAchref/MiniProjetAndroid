@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import tn.esprit.lolretrofit.models.User
 
@@ -18,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var bottomNav: BottomNavigationView
     lateinit var nowuser: User
     private lateinit var mSharedPref: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -42,7 +44,7 @@ class HomeActivity : AppCompatActivity() {
                     toolbar.setTitle("Home");
                 }
                 R.id.mimessage -> {
-                    changeFragment(QuestionFragment(),"")
+                    changeFragment(MessageFragment(),"")
                     toolbar.setTitle("Message");
                 }
                 R.id.miprofil -> {

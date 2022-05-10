@@ -11,6 +11,8 @@ data class Message (
     var objectt: String,
     @SerializedName("from")
     var from: String,
+    @SerializedName("name")
+    var name: String,
 
     @SerializedName("to")
     var to: String,

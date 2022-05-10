@@ -33,12 +33,13 @@ class ReponseAdapter(val ReponseList: MutableList<Reponse>) : RecyclerView.Adapt
         val idUser = ReponseList[position].idUser
 
         val idClient = ReponseList[position].idUser
-
+        val nomClient = ReponseList[position].nameUser
         val idQuestion = ReponseList[position].id
 
 
         holder.txtEdit.setText(description)
-        holder.Reponsefrom.setText(idClient)
+
+        holder.Reponsefrom.setText(nomClient)
 
 
     }

@@ -23,7 +23,7 @@
 
 
 
-        app:title=""
+        app:title="Verification Code"
         app:titleTextColor="@color/white" />
     <LinearLayout
         android:id="@+id/line1"

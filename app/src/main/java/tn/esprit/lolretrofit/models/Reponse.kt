@@ -10,6 +10,8 @@ data class Reponse (
     var idUser: String,
     @SerializedName("idQuestion")
     var idQuestion: String,
+    @SerializedName("nameUser")
+    var nameUser: String,
 
     @SerializedName("_id")
     var id: String

@@ -37,11 +37,12 @@ class QuestionDetails : AppCompatActivity() {
 
         val idQuestion = myIntent.getStringExtra("idQuestion")
         txtEdit = findViewById(R.id.Edittext)
+
         TextSubject = findViewById(R.id.QuestionSubject)
         btnListReponse= findViewById(R.id.btnListReponse)
         txtEdit.setText(description)
         TextSubject.setText(subject)
-
+        TextSubject.isEnabled =false
         btnListReponse!!.setOnClickListener {
 
             val mainIntent = Intent(this, AllReponse::class.java)

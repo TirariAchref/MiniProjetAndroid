@@ -15,6 +15,7 @@ class MenuFragment : Fragment() {
 
     private lateinit var txtFullName: TextView
     private lateinit var buttonChangepassword: TextView
+    private lateinit var buttonMyQuestion: TextView
     private lateinit var logout: TextView
     private lateinit var mSharedPref: SharedPreferences
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +24,7 @@ class MenuFragment : Fragment() {
 
         txtFullName = rootView.findViewById(R.id.idfullname)
         buttonChangepassword= rootView.findViewById(R.id.UpdateProfile)
+        buttonMyQuestion= rootView.findViewById(R.id.mylist)
         logout= rootView.findViewById(R.id.logOut)
         txtFullName.isEnabled = false
 
@@ -32,6 +34,12 @@ class MenuFragment : Fragment() {
 
         buttonChangepassword.setOnClickListener{
             val intent = Intent(activity, changepassword::class.java)
+            startActivity(intent)
+
+
+        }
+        buttonMyQuestion.setOnClickListener{
+            val intent = Intent(activity, MyQuestion::class.java)
             startActivity(intent)
 
 

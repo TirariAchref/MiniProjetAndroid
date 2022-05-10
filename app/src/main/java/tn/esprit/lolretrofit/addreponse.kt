@@ -87,7 +87,10 @@ class addreponse : AppCompatActivity() {
 //put something inside the map, could be null
         jsonParams["description"] = txtEdit.text.toString()
         jsonParams["idUser"] = nowuser.id
+        jsonParams["nameUser"] = nowuser.nom
         jsonParams["idQuestion"] = idQuestion
+
+
 
 
 

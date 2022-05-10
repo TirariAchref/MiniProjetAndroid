@@ -6,10 +6,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import tn.esprit.lolretrofit.models.Question
-import tn.esprit.lolretrofit.models.Reponse
-import tn.esprit.lolretrofit.models.User
-import tn.esprit.lolretrofit.models.sendmail
+import tn.esprit.lolretrofit.models.*
 import java.util.concurrent.TimeUnit
 
 
@@ -39,12 +36,20 @@ interface ApiInterface {
     @GET("allreponses")
     fun AllReponse(): Call<MutableList<Reponse>>
 
+    @GET("allmessagerie")
+    fun AllMessage(): Call<MutableList<Message>>
 
     @PUT("getuser/{id}")
     fun getByid(@Path("id") id : String): Call<User>
 
     @POST("createreponse")
     fun addReponse(@Body info: RequestBody): Call<Reponse>
+
+    @POST("createmessagerie")
+    fun addMessage(@Body info: RequestBody): Call<Message>
+
+    @POST("createquestion")
+    fun createquestion(@Body info: RequestBody): Call<Question>
     companion object {
 
         var BASE_URL = "http://192.168.1.5:3000/"

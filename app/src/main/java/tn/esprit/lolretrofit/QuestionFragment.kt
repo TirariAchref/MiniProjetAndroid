@@ -1,5 +1,6 @@
 package tn.esprit.lolretrofit
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.ArrayMap
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import okhttp3.MediaType
 import okhttp3.RequestBody
 import org.json.JSONObject
@@ -27,13 +29,19 @@ class QuestionFragment : Fragment() {
     lateinit var recylcerChampion: RecyclerView
     lateinit var recylcerChampionAdapter: QuestionAdapter
     var champList : MutableList<Question> = ArrayList()
+    lateinit var btnadd: FloatingActionButton
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_question, container, false)
 
+        btnadd = rootView.findViewById(R.id.fab)
+        btnadd.setOnClickListener{
+            val intent = Intent(activity, AddQuestion::class.java)
+            startActivity(intent)
 
+        }
 
         recylcerChampion = rootView.findViewById(R.id.recyclerChampion)
 

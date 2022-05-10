@@ -11,6 +11,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarback"
 
+
         app:navigationIcon="@drawable/ic_baseline_navigate_before_24"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -22,7 +23,7 @@
 
 
 
-        app:title=""
+        app:title="Update Profile"
         app:titleTextColor="@color/white" />
     <LinearLayout
         android:id="@+id/line1"
