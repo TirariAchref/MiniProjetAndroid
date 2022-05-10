@@ -16,6 +16,8 @@ class MenuFragment : Fragment() {
     private lateinit var txtFullName: TextView
     private lateinit var buttonChangepassword: TextView
     private lateinit var buttonMyQuestion: TextView
+    private lateinit var buttonQrCode: TextView
+    private lateinit var buttonGoogleMap: TextView
     private lateinit var logout: TextView
     private lateinit var mSharedPref: SharedPreferences
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +27,8 @@ class MenuFragment : Fragment() {
         txtFullName = rootView.findViewById(R.id.idfullname)
         buttonChangepassword= rootView.findViewById(R.id.UpdateProfile)
         buttonMyQuestion= rootView.findViewById(R.id.mylist)
+        buttonGoogleMap= rootView.findViewById(R.id.GoogleMap)
+        buttonQrCode= rootView.findViewById(R.id.QrCode)
         logout= rootView.findViewById(R.id.logOut)
         txtFullName.isEnabled = false
 
@@ -40,6 +44,18 @@ class MenuFragment : Fragment() {
         }
         buttonMyQuestion.setOnClickListener{
             val intent = Intent(activity, MyQuestion::class.java)
+            startActivity(intent)
+
+
+        }
+        buttonGoogleMap.setOnClickListener{
+            val intent = Intent(activity, mapbox::class.java)
+            startActivity(intent)
+
+
+        }
+        buttonQrCode.setOnClickListener{
+            val intent = Intent(activity, qr_code::class.java)
             startActivity(intent)
 
 

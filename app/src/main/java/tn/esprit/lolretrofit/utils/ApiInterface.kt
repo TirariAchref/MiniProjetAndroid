@@ -52,7 +52,7 @@ interface ApiInterface {
     fun createquestion(@Body info: RequestBody): Call<Question>
     companion object {
 
-        var BASE_URL = "http://192.168.1.5:3000/"
+        var BASE_URL = "http://192.168.1.109:3000/"
 
         fun create() : ApiInterface {
             val httpClient = OkHttpClient.Builder()
