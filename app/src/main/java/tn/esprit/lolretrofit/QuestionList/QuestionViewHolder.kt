@@ -8,12 +8,12 @@ import tn.esprit.lolretrofit.R
 
 class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val QuestionPic : ImageView
-    val QuestionName : TextView
-    val QuestionTitle: TextView = itemView.findViewById<TextView>(R.id.markk)
+    val QuestionDescription : TextView
+    val QuestionSubject: TextView = itemView.findViewById<TextView>(R.id.Subject)
 
     init {
         QuestionPic = itemView.findViewById<ImageView>(R.id.picc)
-        QuestionName = itemView.findViewById<TextView>(R.id.namee)
+        QuestionDescription = itemView.findViewById<TextView>(R.id.Description)
     }
 
 }

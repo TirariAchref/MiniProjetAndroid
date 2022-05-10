@@ -62,7 +62,15 @@ class HomeActivity : AppCompatActivity() {
 
                 }
                 R.id.miservice ->{
-                    changeFragment(QuestionFragment(),"")
+                    val gson = Gson()
+                    val  us =  mSharedPref.getString(myuser, "")
+
+                    nowuser = gson.fromJson(us,User::class.java)
+                    print(nowuser)
+                    val skillsFragmentt = MenuFragment.newInstance(
+
+                        nowuser.nom)
+                    changeFragment(skillsFragmentt,"")
                     toolbar.setTitle("Menu");
                 }
             }

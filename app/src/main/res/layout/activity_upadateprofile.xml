@@ -5,9 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".changepassword">
+    tools:context=".upadateprofile">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarback"
+
+        app:navigationIcon="@drawable/ic_baseline_navigate_before_24"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+
+
+        app:title=""
+        app:titleTextColor="@color/white" />
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="0dp"
@@ -23,7 +39,7 @@
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change Password"
+            android:text="Update Profile"
             android:textColor="@color/colorPrimary"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -39,20 +55,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:hint="Password"
+            android:hint="Full Name"
             app:errorEnabled="true"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line1"
-            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
             app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword" />
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -60,20 +76,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:hint="Confirmed Password"
+            android:hint="Phone Number"
             app:errorEnabled="true"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line1"
-            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:startIconDrawable="@drawable/ic_phone"
             app:startIconTint="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEmailm"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword" />
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
@@ -90,5 +106,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cbRememberMe" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
 package tn.esprit.lolretrofit
 
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.ArrayMap
@@ -12,6 +12,8 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
@@ -21,7 +23,6 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import tn.esprit.lolretrofit.models.Question
 import tn.esprit.lolretrofit.models.User
 import tn.esprit.lolretrofit.utils.ApiInterface
 
@@ -35,6 +36,19 @@ class ForgetPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forget_password)
+
+        //toolbar
+        val toolbar: Toolbar = findViewById(R.id.toolbarback)
+        setSupportActionBar(toolbar)
+
+
+        toolbar.setNavigationOnClickListener {
+
+            mainIntent = Intent(this, MainActivity::class.java)
+            startActivity(mainIntent)
+            finish()
+        }
+
         btnLogin = findViewById(R.id.findAccount)
         mSharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         txtLogin = findViewById(R.id.txtEmail)

@@ -29,7 +29,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"/>
                 <TextView
-                    android:text="Address"
+                    android:text="Full Name"
                     android:textSize="16sp"
                     android:layout_margin="5dp"
                     android:textStyle="bold|normal"
@@ -38,26 +38,30 @@
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
+
             <LinearLayout
-                android:orientation="horizontal"
-                android:padding="1dp"
-                android:gravity="center"
-                android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="1dp">
+
                 <ImageView
-                    android:padding="1dp"
-                    android:src="@drawable/ic_baseline_settings_24"
                     android:layout_width="35dp"
-                    android:layout_height="35dp"/>
+                    android:layout_height="35dp"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_baseline_settings_24" />
+
                 <TextView
-                    android:text="Edit Information"
-                    android:textSize="16sp"
-                    android:layout_margin="5dp"
-                    android:textStyle="bold|normal"
-                    android:textColor="#AAFFE8"
+                    android:id="@+id/edit"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Edit Information"
+                    android:textColor="#AAFFE8"
+                    android:textSize="16sp"
+                    android:textStyle="bold|normal" />
 
             </LinearLayout>
         </RelativeLayout>
@@ -65,35 +69,23 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
-                app:tint="@color/black"
-                android:layout_marginStart="10dp"
-                android:padding="2dp"
-                android:src="@drawable/ic_baseline_home_24"
-                android:layout_width="25dp"
-                android:layout_height="25dp"/>
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/idAddress"
-                    android:text="34 Rue dawha Megrine hay chaker"
+                    android:text="Tirari Achref"
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:gravity="center"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="Tunis, \nBen arous , \nMegrin"
-                    android:textSize="13sp"
-                    android:textColor="#ED5E5E5E"
-                    android:textStyle="normal"
-                    android:textAlignment="textStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    card_view:ignore="RtlCompat" />
+
 
 
             </LinearLayout>
