@@ -48,6 +48,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     />
+
                 <TextView
                     android:id="@+id/QrCode"
                     android:layout_width="wrap_content"
@@ -57,8 +58,8 @@
                     android:text="QrCode"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/GoogleMap"
                     android:layout_width="wrap_content"

@@ -20,12 +20,20 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.GraphRequest
+import com.facebook.login.LoginResult
+import com.facebook.login.widget.LoginButton
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
+import org.json.JSONException
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,11 +71,34 @@ class MainActivity : AppCompatActivity() {
     lateinit var mainIntent : Intent
     lateinit var obje : User
     var gson = Gson()
+
+
+
+
+
+    var callbackManager : CallbackManager?=null
+
+
+    var loginButton: LoginButton?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         forgotpass = findViewById(R.id.forgotPassword)
         buttonSingUp= findViewById(R.id.textViewSignUp)
+
+
+        /////
+        callbackManager = CallbackManager.Factory.create()
+        loginButton = findViewById<LoginButton>(R.id.login_button)
+        findViewById<Button>(R.id.btnFacebook).setOnClickListener{
+            loginButton?.performClick()
+            FacebookInit()
+
+
+        }
+
+
+        ///
 
         txtLogin = findViewById(R.id.txtEmail)
         txtLayoutLogin = findViewById(R.id.txtLayoutEmail)
@@ -181,7 +212,7 @@ class MainActivity : AppCompatActivity() {
         jsonParams["password"] = txtPassword!!.text.toString()
 
         val body = RequestBody.create(
-            MediaType.parse("application/json; charset=utf-8"),
+            "application/json; charset=utf-8".toMediaTypeOrNull(),
             JSONObject(jsonParams).toString()
         )
 
@@ -246,6 +277,60 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Google Sign In UnSuccess", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private  fun FacebookInit(){
+
+        loginButton?.setReadPermissions("email", "public_profile")
+        loginButton?.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+            override fun onSuccess(result: LoginResult?) {
+
+                var request = GraphRequest.newMeRequest(result?.accessToken){
+                        `object` , response ->
+                    retrieveFacbookData(`object`)
+                }
+                var parm = Bundle()
+                parm.putString("fields", "id, name, email , gender")
+                request.parameters= parm
+                request.executeAsync()
+
+
+            }
+
+            override fun onCancel() {
+                Toast.makeText(applicationContext , "login canceled" , Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onError(error: FacebookException?) {
+                error?.printStackTrace()
+            }
+        } )
+    }
+
+    private fun retrieveFacbookData(jsonObject: JSONObject){
+
+
+        try {
+            var pictureUrl = "http:graph.facebook.com/${jsonObject.getString("id")}/picture?type=large"
+            var name = jsonObject.getString("name")
+            var email = jsonObject.getString("email")
+
+            Log.d("Facebook LOGIN", "name :  ${email +  name}")
+
+        }catch (e: JSONException){
+            e.printStackTrace()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+
+        callbackManager?.onActivityResult(requestCode,resultCode,data)
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+
+
+
 
 
 }

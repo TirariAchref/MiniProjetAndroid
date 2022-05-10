@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.google.gson.Gson
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -78,7 +79,7 @@ class AddQuestion : AppCompatActivity() {
 
 
         val body = RequestBody.create(
-            MediaType.parse("application/json; charset=utf-8"),
+            "application/json; charset=utf-8".toMediaTypeOrNull(),
             JSONObject(jsonParams).toString()
         )
 
