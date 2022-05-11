@@ -12,6 +12,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.bumptech.glide.Glide
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.gson.Gson
 import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -30,12 +32,12 @@ class verificationcode : AppCompatActivity() {
     private lateinit var mSharedPref: SharedPreferences
     lateinit var nowuser: User
     lateinit var mainIntent : Intent
+    private lateinit var imageme: ShapeableImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verificationcode)
 
-
-
+        imageme = findViewById(R.id.idUrlImg)
         //toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbarback)
         setSupportActionBar(toolbar)
@@ -54,6 +56,13 @@ class verificationcode : AppCompatActivity() {
 
         nowuser = gson.fromJson(us, User::class.java)
         txtFullName.text = nowuser.nom
+        var imagee =""
+        if( nowuser.imageUrl!=null){
+            imagee = "uploads/"+ nowuser.imageUrl.subSequence(8,nowuser.imageUrl.length)
+
+        }
+        Glide.with(imageme).load(ApiInterface.BASE_URL + imagee).placeholder(R.drawable.ic_account).circleCrop()
+            .error(R.drawable.ic_baseline_account_circle_24).into(imageme)
         btnLogin = findViewById(R.id.findAccount)
         btnLogin.setOnClickListener{
              mainIntent = Intent(this, accountfound::class.java)
