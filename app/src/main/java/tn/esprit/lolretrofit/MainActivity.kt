@@ -367,7 +367,7 @@ class MainActivity : AppCompatActivity() {
                         val jsonParams: MutableMap<String?, Any?> = ArrayMap()
 //put something inside the map, could be null
 //put something inside the map, could be null
-                        jsonParams["email"] = txtLogin!!.text.toString()
+                        jsonParams["email"] = email
                         jsonParams["password"] = "password"
 
                         jsonParams["nom"] = name
