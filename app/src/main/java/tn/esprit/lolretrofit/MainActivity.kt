@@ -52,7 +52,7 @@ const val fullname = "fullname"
 const val password = "password"
 const val myuser = "myuser"
 const val USER_ID = "USER_ID"
-
+const val Facebookk = "FALSE"
 const val IS_REMEMBRED = "remembred"
 class MainActivity : AppCompatActivity() {
 
@@ -352,6 +352,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("json",json.toString())
                         mSharedPref.edit().apply {
                             putString(myuser, json)
+                            putString(Facebookk,"TRUE")
 
                         }.apply()
                         startActivity(mainIntent)
@@ -394,7 +395,7 @@ class MainActivity : AppCompatActivity() {
                                     Log.d("json",json.toString())
                                     mSharedPref.edit().apply {
                                         putString(myuser, json)
-
+                                        putString(Facebookk,"TRUE")
                                     }.apply()
                                     startActivity(mainIntent)
                                     finish()

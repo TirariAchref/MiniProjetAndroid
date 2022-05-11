@@ -45,7 +45,7 @@ class MenuFragment : Fragment() {
         imageme = rootView.findViewById(R.id.idUrlImg)
         val gson = Gson()
         val  us =  mSharedPref.getString(myuser, "")
-
+        val  facebooktest =  mSharedPref.getString(Facebookk, "")
         nowuser = gson.fromJson(us,User::class.java)
         var imagee =""
         if( nowuser.imageUrl!=null){
@@ -58,7 +58,9 @@ class MenuFragment : Fragment() {
         val name = requireArguments().getString(fullname,"NULL")
         mSharedPref = this.requireActivity().getSharedPreferences(PREF_NAME, AppCompatActivity.MODE_PRIVATE);
         txtFullName.text = " $name"
-
+if(facebooktest =="TRUE"){
+    buttonChangepassword.setVisibility(View.INVISIBLE);
+}
         buttonChangepassword.setOnClickListener{
             val intent = Intent(activity, changepassword::class.java)
             startActivity(intent)
