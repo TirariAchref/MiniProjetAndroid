@@ -44,9 +44,7 @@ class AddMessage : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
 
-            val  mainIntent = Intent(this, HomeActivity::class.java)
 
-            startActivity(mainIntent)
             finish()
         }
         txtEdit = findViewById(R.id.Edittext)

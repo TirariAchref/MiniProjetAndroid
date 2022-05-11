@@ -1,6 +1,7 @@
 package tn.esprit.lolretrofit
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
@@ -212,7 +213,9 @@ class mapbox : AppCompatActivity() ,OnMapClickListener{
         super.onDestroy()
         mapView?.onDestroy()
 
-        searchRequestTask.cancel()
+
+
+       
     }
 
     override fun onMapClick(point: Point): Boolean {

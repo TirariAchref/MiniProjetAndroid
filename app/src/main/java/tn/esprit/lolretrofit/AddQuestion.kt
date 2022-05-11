@@ -75,7 +75,7 @@ class AddQuestion : AppCompatActivity() {
         jsonParams["description"] = txtEdit.text.toString()
         jsonParams["idClient"] = nowuser.id
         jsonParams["subject"] = txtEditSub.text.toString()
-
+        jsonParams["imageClient"] = nowuser.imageUrl
 
 
         val body = RequestBody.create(

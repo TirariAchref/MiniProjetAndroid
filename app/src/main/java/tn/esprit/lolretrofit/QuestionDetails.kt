@@ -24,8 +24,7 @@ class QuestionDetails : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
 
-            val  mainIntent = Intent(this, HomeActivity::class.java)
-            startActivity(mainIntent)
+
             finish()
         }
 
@@ -54,7 +53,7 @@ class QuestionDetails : AppCompatActivity() {
 
 
             startActivity(mainIntent)
-            finish()
+
 
 
         }

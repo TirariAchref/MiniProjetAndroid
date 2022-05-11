@@ -8,12 +8,29 @@
     tools:context=".mapbox">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarback"
+
+        app:navigationIcon="@drawable/ic_baseline_navigate_before_24"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+
+
+        app:title="Google Map"
+        app:titleTextColor="@color/white" />
     <com.mapbox.maps.MapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         mapbox:mapbox_cameraTargetLat="40.7128"
         mapbox:mapbox_cameraTargetLng="-74.0060"
+
         mapbox:mapbox_cameraZoom="9.0"/>
 
 

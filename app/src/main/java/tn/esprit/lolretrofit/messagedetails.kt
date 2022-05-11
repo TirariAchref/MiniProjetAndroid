@@ -26,8 +26,6 @@ class messagedetails : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
 
-            val  mainIntent = Intent(this, HomeActivity::class.java)
-            startActivity(mainIntent)
             finish()
         }
         val myIntent = intent
@@ -49,7 +47,7 @@ class messagedetails : AppCompatActivity() {
             val mainIntent = Intent(this, AddMessage::class.java)
 
             startActivity(mainIntent)
-            finish()
+
 
 
         }

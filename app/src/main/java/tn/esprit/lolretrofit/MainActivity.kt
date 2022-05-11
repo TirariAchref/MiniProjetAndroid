@@ -316,16 +316,122 @@ class MainActivity : AppCompatActivity() {
 
             Log.d("Facebook LOGIN", "name :  ${email +  name}")
 
+            val apiInterface = ApiInterface.create()
+            progBar.visibility = View.VISIBLE
+
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+            )
+            val jsonParams: MutableMap<String?, Any?> = ArrayMap()
+//put something inside the map, could be null
+//put something inside the map, could be null
+            jsonParams["email"] = email
+            jsonParams["password"] = "password"
+
+            val body = RequestBody.create(
+                "application/json; charset=utf-8".toMediaTypeOrNull(),
+                JSONObject(jsonParams).toString()
+            )
+
+            apiInterface.seConnecter(body).enqueue(object : Callback<User> {
+
+                override fun onResponse(call: Call<User>, response: Response<User>) {
+
+                    val user = response.body()
+
+                    if (user != null){
+                        Toast.makeText(this@MainActivity, "Login Success", Toast.LENGTH_SHORT).show()
+
+
+                        Log.d("user",user.toString())
+
+                        val json = gson.toJson(user)
+                        print("////////////////////////////////////////////////")
+                        Log.d("json",json.toString())
+                        mSharedPref.edit().apply {
+                            putString(myuser, json)
+
+                        }.apply()
+                        startActivity(mainIntent)
+                        finish()
+                    }else{
+
+                        val apiInterface = ApiInterface.create()
+
+
+                        window.setFlags(
+                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+                        )
+                        val jsonParams: MutableMap<String?, Any?> = ArrayMap()
+//put something inside the map, could be null
+//put something inside the map, could be null
+                        jsonParams["email"] = txtLogin!!.text.toString()
+                        jsonParams["password"] = "password"
+
+                        jsonParams["nom"] = name
+
+
+                        val body = RequestBody.create(
+                            "application/json; charset=utf-8".toMediaTypeOrNull(),
+                            JSONObject(jsonParams).toString()
+                        )
+
+                        apiInterface.SignIn(body).enqueue(object : Callback<User> {
+
+                            override fun onResponse(call: Call<User>, response: Response<User>) {
+
+                                val user = response.body()
+
+                                if (user != null){
+                                    Toast.makeText(this@MainActivity, "Sign Up Success", Toast.LENGTH_SHORT).show()
+                                    Log.d("user",user.toString())
+
+                                    val json = gson.toJson(user)
+                                    print("////////////////////////////////////////////////")
+                                    Log.d("json",json.toString())
+                                    mSharedPref.edit().apply {
+                                        putString(myuser, json)
+
+                                    }.apply()
+                                    startActivity(mainIntent)
+                                    finish()
+                                }else{
+                                    Toast.makeText(this@MainActivity, "can not sign up", Toast.LENGTH_SHORT).show()
+                                }
+
+
+                                window.clearFlags( WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }
+
+                            override fun onFailure(call: Call<User>, t: Throwable) {
+                                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+
+
+                                window.clearFlags( WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                            }
+
+                        })
+
+                    }
+
+                    progBar.visibility = View.INVISIBLE
+                    window.clearFlags( WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                }
+
+                override fun onFailure(call: Call<User>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+
+                    progBar.visibility = View.INVISIBLE
+                    window.clearFlags( WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+                }
+
+            })
+
         }catch (e: JSONException){
             e.printStackTrace()
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-
-        callbackManager?.onActivityResult(requestCode,resultCode,data)
-        super.onActivityResult(requestCode, resultCode, data)
     }
 
 

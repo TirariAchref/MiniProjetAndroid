@@ -42,8 +42,7 @@ class upadateprofile : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
 
-            val  mainIntent = Intent(this, HomeActivity::class.java)
-            startActivity(mainIntent)
+
             finish()
         }
         btnLogin = findViewById(R.id.findAccount)

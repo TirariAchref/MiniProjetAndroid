@@ -6,6 +6,7 @@
         <entry key="..\:/Users/FGH/AndroidStudioProjects/lolretrofit/app/src/main/res/drawable/ic_lock.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/FGH/AndroidStudioProjects/lolretrofit/app/src/main/res/layout/activity_main.xml" value="0.35989583333333336" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/drawable/btn_bg.xml" value="0.188" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1405" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.188" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/drawable/ic_baseline_navigate_before_24.xml" value="0.188" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_accountfound.xml" value="0.25416666666666665" />
@@ -17,8 +18,10 @@
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_forget_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_mapbox.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_messagedetails.xml" value="0.225" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_my_question.xml" value="0.225" />
+        <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_qr_code.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_question_details.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_sign_up.xml" value="0.2484375" />
         <entry key="..\:/Users/Tirari Achref/Desktop/ESPRIT/MiniProjetAndroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />

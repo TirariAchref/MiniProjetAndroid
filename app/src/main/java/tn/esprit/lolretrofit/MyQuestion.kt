@@ -38,10 +38,7 @@ class MyQuestion : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
 
-            val  mainIntent = Intent(this, HomeActivity::class.java)
 
-
-            startActivity(mainIntent)
             finish()
         }
         recylcerChampion = findViewById(R.id.recyclerChampion)

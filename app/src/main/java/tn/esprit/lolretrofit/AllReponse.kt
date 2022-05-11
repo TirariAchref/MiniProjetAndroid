@@ -39,15 +39,7 @@ class AllReponse : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
 
-            val mainIntent = Intent(this, QuestionDetails::class.java)
 
-            mainIntent.putExtra("description",description);
-            mainIntent.putExtra("subject",subject);
-            mainIntent.putExtra("idClient",idClient);
-            mainIntent.putExtra("idQuestion",idQuestion);
-
-
-            startActivity(mainIntent)
             finish()
         }
 
@@ -70,7 +62,7 @@ class AllReponse : AppCompatActivity() {
             mainIntent.putExtra("idQuestion",idQuestion);
 
             startActivity(mainIntent)
-            finish()
+
         }
 
     }

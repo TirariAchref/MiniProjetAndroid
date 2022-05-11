@@ -149,7 +149,7 @@ class SignUp : AppCompatActivity() {
         jsonParams["password"] = txtPassword!!.text.toString()
         jsonParams["phone"] = txtPhone!!.text.toString()
         jsonParams["nom"] = txtName!!.text.toString()
-
+        jsonParams["imageUrl"] = "txtName!!.text.toString()"
 
         val body = RequestBody.create(
             "application/json; charset=utf-8".toMediaTypeOrNull(),
