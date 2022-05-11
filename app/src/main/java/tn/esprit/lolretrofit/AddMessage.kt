@@ -94,7 +94,7 @@ class AddMessage : AppCompatActivity() {
                     Toast.makeText(this@AddMessage, "Message Aded", Toast.LENGTH_SHORT).show()
 
 
-                    startActivity(amainIntent)
+                  
                     finish()
                 }else{
                     Toast.makeText(this@AddMessage, "can not Add Message", Toast.LENGTH_SHORT).show()

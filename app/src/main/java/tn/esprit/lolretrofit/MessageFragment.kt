@@ -83,7 +83,7 @@ class MessageFragment : Fragment() {
                         }
                     }
 
-                    recylcerChampionAdapter = MessageAdapter(champList)
+                    recylcerChampionAdapter = MessageAdapter(ArrayList(champList.asReversed()))
                     recylcerChampion.adapter = recylcerChampionAdapter
 
                 }

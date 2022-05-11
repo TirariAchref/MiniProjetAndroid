@@ -62,7 +62,7 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
 
-        android:text="Reponse"
+        android:text="All Reponse"
         android:textColor="@color/white"
         android:textSize="18sp"
 

@@ -129,7 +129,7 @@ class AllReponse : AppCompatActivity() {
 
                     }
 
-                    recylcerReponseAdapter = ReponseAdapter(ReponseListTrue)
+                    recylcerReponseAdapter = ReponseAdapter(ArrayList(ReponseListTrue.asReversed()))
                     recylcerReponse.adapter = recylcerReponseAdapter
 
                 }
