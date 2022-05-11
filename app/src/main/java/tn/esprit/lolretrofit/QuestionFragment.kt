@@ -73,7 +73,8 @@ class QuestionFragment : Fragment() {
 
                 if (user != null) {
                     champList=user
-                    recylcerChampionAdapter = QuestionAdapter(champList)
+
+                    recylcerChampionAdapter = QuestionAdapter(ArrayList(champList.asReversed()))
                     recylcerChampion.adapter = recylcerChampionAdapter
 
                 }

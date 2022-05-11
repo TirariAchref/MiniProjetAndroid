@@ -72,7 +72,7 @@ class MyQuestion : AppCompatActivity() {
                         }
                     }
 
-                    recylcerChampionAdapter = QuestionAdapter(champList)
+                    recylcerChampionAdapter = QuestionAdapter(ArrayList(champList.asReversed()))
                     recylcerChampion.adapter = recylcerChampionAdapter
 
                 }
