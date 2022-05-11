@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
 
 
             startActivity(mainIntent)
-          
+
         }
         forgotpass.setOnClickListener{
             val mainIntent = Intent(this, ForgetPassword::class.java)
