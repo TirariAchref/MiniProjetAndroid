@@ -54,6 +54,16 @@ class AddQuestion : AppCompatActivity() {
 
         amainIntent = Intent(this, HomeActivity::class.java)
         btnADDQuestion.setOnClickListener{
+            if (txtEditSub?.text!!.isEmpty()) {
+                Toast.makeText(this@AddQuestion, "Subject must not be empty", Toast.LENGTH_SHORT).show()
+
+            return@setOnClickListener
+        }
+        if (txtEdit?.text!!.isEmpty()) {
+            Toast.makeText(this@AddQuestion, "Description must not be empty", Toast.LENGTH_SHORT).show()
+
+            return@setOnClickListener
+        }
             doLogin()
         }
     }

@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.ArrayMap
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import com.google.gson.Gson
 import okhttp3.MediaType
@@ -18,16 +16,19 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import tn.esprit.lolretrofit.ReponseList.ReponseAdapter
 import tn.esprit.lolretrofit.models.Message
 import tn.esprit.lolretrofit.models.Question
+import tn.esprit.lolretrofit.models.Reponse
 import tn.esprit.lolretrofit.models.User
 import tn.esprit.lolretrofit.utils.ApiInterface
 
 class AddMessage : AppCompatActivity() {
     private lateinit var txtEdit: EditText
     private lateinit var txtEditSub: EditText
-    private lateinit var txtEditSubto: EditText
-
+    private lateinit var txtEditSubto: AutoCompleteTextView
+    var UserList : MutableList<User> = ArrayList()
+    var UserListemail : MutableList<String> = ArrayList()
     lateinit var btnADDQuestion: Button
     lateinit var nowuser: User
     private lateinit var mSharedPref: SharedPreferences
@@ -36,6 +37,7 @@ class AddMessage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_message)
         //toolbar
+        alluser()
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -53,9 +55,64 @@ class AddMessage : AppCompatActivity() {
         btnADDQuestion= findViewById(R.id.btnAddQuestion)
 
         amainIntent = Intent(this, HomeActivity::class.java)
+
+        val adapter = ArrayAdapter(this,
+            android.R.layout.simple_list_item_1, UserListemail)
+        txtEditSubto.setAdapter(adapter)
         btnADDQuestion.setOnClickListener{
+
+            if (txtEditSubto?.text!!.isEmpty()) {
+                Toast.makeText(this@AddMessage, "To must not be empty", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+            if (txtEditSub?.text!!.isEmpty()) {
+                Toast.makeText(this@AddMessage, "Subject must not be empty", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+            if (txtEdit?.text!!.isEmpty()) {
+                Toast.makeText(this@AddMessage, "Message must not be empty ", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+
             doLogin()
         }
+    }
+    private fun alluser(){
+
+        val apiInterface = ApiInterface.create()
+
+
+
+        apiInterface.allusers().enqueue(object : Callback<MutableList<User>> {
+
+            override fun onResponse(call: Call<MutableList<User>>, response: Response<MutableList<User>>) {
+
+                val user = response.body()
+
+                if (user != null) {
+
+                    UserList = user
+
+                    for(a in UserList){
+                        UserListemail.add(a.email)
+                    }
+
+                }
+
+
+
+            }
+
+            override fun onFailure(call: Call<MutableList<User>>, t: Throwable) {
+
+            }
+
+        })
+
+
     }
     private fun doLogin(){
         val gson = Gson()

@@ -79,10 +79,7 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
-        bottomNav.getOrCreateBadge(R.id.mimessage).apply {
-            number = 8
-            isVisible = true
-        }
+
 
     }
 
