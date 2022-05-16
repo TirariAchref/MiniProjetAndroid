@@ -68,6 +68,11 @@ class addreponse : AppCompatActivity() {
 
         amainIntent = Intent(this, AllReponse::class.java)
         btnADDReponse.setOnClickListener{
+            if (txtEdit?.text!!.isEmpty()) {
+                Toast.makeText(this@addreponse, "Reponse must not be empty", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
             doLogin()
         }
     }

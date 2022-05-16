@@ -24,6 +24,7 @@
 
         app:title="Google Map"
         app:titleTextColor="@color/white" />
+
     <com.mapbox.maps.MapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"

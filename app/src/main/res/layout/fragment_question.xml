@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".QuestionFragment">
 
 
@@ -16,9 +17,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="4dp"
+android:outlineAmbientShadowColor="@color/colorPrimary"
+        app:rippleColor="@color/colorPrimary"
         android:background="@color/colorPrimary"
+
+     android:outlineSpotShadowColor="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
         android:contentDescription="submit"
+
+
         android:src="@drawable/ic_baseline_add_circle_24" />
 
 <RelativeLayout
