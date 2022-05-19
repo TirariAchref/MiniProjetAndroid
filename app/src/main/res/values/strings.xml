@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">lol retrofit</string>
+    <string name="app_name">Tbibi</string>
     <string name="mustNotBeEmpty">Must not be empty !</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <string name="mapbox_access_token">pk.eyJ1Ijoic2FtaXJsYWQiLCJhIjoiY2wzMGl5ZG9kMDJuaTNib2p2NDY2MWo0byJ9.HtzZIBeTcDwkzQiTwTbAhQ</string>
-
 
 
     <string name="facebook_app_id">524029205940061</string>

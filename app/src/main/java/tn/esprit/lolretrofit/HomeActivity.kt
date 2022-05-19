@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
+import io.getstream.chat.android.client.ChatClient
+import io.getstream.chat.android.client.logger.ChatLogLevel
+import io.getstream.chat.android.livedata.ChatDomain
 import tn.esprit.lolretrofit.models.User
 
 
@@ -23,7 +26,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
+        val client =
+            ChatClient.Builder("nueuxazsvj3k", this).logLevel(ChatLogLevel.ALL).build()
+        ChatDomain.Builder(client, this).build()
         //toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -46,6 +51,10 @@ class HomeActivity : AppCompatActivity() {
                 R.id.mimessage -> {
                     changeFragment(MessageFragment(),"")
                     toolbar.setTitle("Message");
+                }
+                R.id.messenger -> {
+                   val mainIntent2 = Intent(this, MainActivityChat::class.java)
+                    startActivity(mainIntent2)
                 }
                 R.id.miprofil -> {
                     val gson = Gson()

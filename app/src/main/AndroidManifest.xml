@@ -19,12 +19,11 @@
         android:theme="@style/Theme.LolRetrofit"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivityChat"
+            android:exported="false" />
+        <activity
             android:name=".UploadImage"
-            android:exported="true" >
-
-
-        </activity>
-
+            android:exported="true"></activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -32,9 +31,10 @@
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token" />
+
         <activity
-        android:name=".qr_code"
-        android:exported="false" />
+            android:name=".qr_code"
+            android:exported="false" />
         <activity
             android:name=".MyQuestion"
             android:exported="false" />
@@ -91,12 +91,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
-
-
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
