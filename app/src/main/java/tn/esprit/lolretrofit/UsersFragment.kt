@@ -1,17 +1,21 @@
 package tn.esprit.lolretrofit
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.api.models.QueryUsersRequest
 import io.getstream.chat.android.client.models.Filters
 import io.getstream.chat.android.client.models.User
 import tn.esprit.lolretrofit.databinding.FragmentUsersBinding
+import tn.esprit.lolretrofit.models.ChatUser
 
 class UsersFragment : Fragment() {
 
@@ -21,14 +25,19 @@ class UsersFragment : Fragment() {
     private val usersAdapter by lazy { UsersAdapter() }
 
     private val client = ChatClient.instance()
-
+    lateinit var nowuser: tn.esprit.lolretrofit.models.User
+    private lateinit var mSharedPref: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentUsersBinding.inflate(inflater, container, false)
+        mSharedPref =  this.requireActivity()?.getSharedPreferences(PREF_NAME, AppCompatActivity.MODE_PRIVATE);
+        val gson = Gson()
+        val  us =  mSharedPref.getString(myuser, "")
 
+        nowuser = gson.fromJson(us, tn.esprit.lolretrofit.models.User::class.java)
         setHasOptionsMenu(true)
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
@@ -65,7 +74,9 @@ class UsersFragment : Fragment() {
 
     private fun setupToolbar() {
         binding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
+            val chatUser = ChatUser(nowuser.nom, nowuser.phone)
+            val action = UsersFragmentDirections.actionChatFragmentToChannelFragment(chatUser)
+            findNavController().navigate(action)
         }
     }
 

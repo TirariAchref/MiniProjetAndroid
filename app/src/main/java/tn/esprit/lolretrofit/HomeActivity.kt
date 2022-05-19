@@ -53,8 +53,8 @@ class HomeActivity : AppCompatActivity() {
                     toolbar.setTitle("Message");
                 }
                 R.id.messenger -> {
-                   val mainIntent2 = Intent(this, MainActivityChat::class.java)
-                    startActivity(mainIntent2)
+                    changeFragment(MainActivityChat(),"")
+                    toolbar.setTitle("Messenger");
                 }
                 R.id.miprofil -> {
                     val gson = Gson()

@@ -63,18 +63,32 @@
         <action
             android:id="@+id/action_chatFragment_to_channelFragment"
             app:destination="@id/channelFragment"
-            app:popUpTo="@id/chatFragment"
-            app:popUpToInclusive="true" />
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+
     </fragment>
     <fragment
         android:id="@+id/usersFragment"
         android:name="tn.esprit.lolretrofit.UsersFragment"
         android:label="fragment_users"
         tools:layout="@layout/fragment_users" >
+
         <action
             android:id="@+id/action_usersFragment_to_chatFragment"
             app:destination="@id/chatFragment"
-            app:popUpTo="@id/usersFragment"
-            app:popUpToInclusive="true" />
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_chatFragment_to_channelFragment"
+            app:destination="@id/channelFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+
     </fragment>
 </navigation>
