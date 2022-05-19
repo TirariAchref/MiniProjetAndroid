@@ -20,7 +20,7 @@
 android:outlineAmbientShadowColor="@color/colorPrimary"
         app:rippleColor="@color/colorPrimary"
         android:background="@color/colorPrimary"
-
+        app:borderWidth="0dp"
      android:outlineSpotShadowColor="@color/colorPrimary"
         android:backgroundTint="@color/colorPrimary"
         android:contentDescription="submit"

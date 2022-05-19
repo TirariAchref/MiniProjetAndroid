@@ -60,7 +60,7 @@ interface ApiInterface {
     fun upload(@Part image: MultipartBody.Part,@Path("id") id : String): Call<User>
     companion object {
 
-        var BASE_URL = "http://10.0.2.2:3000/"
+        var BASE_URL = "http://192.168.1.103:3000/"
 
         fun create() : ApiInterface {
             val httpClient = OkHttpClient.Builder()
