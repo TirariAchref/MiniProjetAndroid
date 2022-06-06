@@ -60,7 +60,7 @@ interface ApiInterface {
     fun upload(@Part image: MultipartBody.Part,@Path("id") id : String): Call<User>
     companion object {
 
-        var BASE_URL = "http://192.168.158.107:3000/"
+        var BASE_URL = "https://tbibimaak.herokuapp.com/"
 
         fun create() : ApiInterface {
             val httpClient = OkHttpClient.Builder()
